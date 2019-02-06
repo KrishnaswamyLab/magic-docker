@@ -185,7 +185,6 @@ def parse_args():
         args.t_magic = "auto"
         args.all_genes = True
         args.output = "magic-validate.csv"
-        del args.validate
 
     # fix magic "genes" argument
     if args.all_genes:

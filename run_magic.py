@@ -1,6 +1,8 @@
 import pandas as pd
 import scprep
 import magic
+import numpy as np
+import tasklogger
 
 from utils import check_filetype, check_load_args, check_transform_args
 
@@ -36,7 +38,8 @@ def run_magic_from_file(
         t_magic='auto',
         genes=None,
         # output params
-        output='magic.csv'):
+        output='magic.csv',
+        validate=False):
     """Run MAGIC on a file
 
     Parameters
@@ -190,3 +193,20 @@ def run_magic_from_file(
     if cell_axis in ['col', 'column']:
         magic_data = magic_data.T
     magic_data.to_csv(output)
+    if validate:
+        correct_magic_data = scprep.io.load_csv(
+            'https://raw.githubusercontent.com/KrishnaswamyLab/magic-docker/'
+            'master/magic-validate.csv?'
+            'token=AIGx30AtUqYRF075XivT1oz5U8_APDdJks5cZHfmwA%3D%3D', sparse=False)
+        try:
+            np.testing.assert_equal(scprep.utils.toarray(magic_data),
+                                    scprep.utils.toarray(correct_magic_data))
+            tasklogger.log_debug(
+                "Validation complete, output is equal to expected")
+        except AssertionError:
+            np.testing.assert_allclose(
+                scprep.utils.toarray(magic_data),
+                scprep.utils.toarray(correct_magic_data),
+                atol=1e-14)
+            tasklogger.log_debug(
+                "Validation complete, output is numerically equivalent to expected")
