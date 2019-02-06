@@ -1,2 +1,5 @@
 magic-impute>=1.5.1
 scprep>=0.10.0
+numpy>=1.14.0
+tasklogger>=0.4.0
+pandas>=0.21.0,<0.24
