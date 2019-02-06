@@ -1,5 +1,4 @@
 # magic-docker
----------------------------------------------------------------------------
 
 [![Travis CI Build](https://api.travis-ci.com/KrishnaswamyLab/magic-docker.svg?branch=master)](https://travis-ci.com/KrishnaswamyLab/magic-docker)
 
