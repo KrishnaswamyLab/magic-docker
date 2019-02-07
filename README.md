@@ -3,6 +3,8 @@
 [![Travis CI Build](https://api.travis-ci.com/KrishnaswamyLab/magic-docker.svg?branch=master)](https://travis-ci.com/KrishnaswamyLab/magic-docker)
 [![Docker Build](https://img.shields.io/docker/pulls/scottgigante/magic.svg?style=flat)](https://cloud.docker.com/repository/docker/scottgigante/magic)
 
+Markov Affinity-based Graph Imputation of Cells (MAGIC) is an algorithm for denoising high-dimensional data most commonly applied to single-cell RNA sequencing data. MAGIC learns the manifold data, using the resultant graph to smooth the features and restore the structure of the data.
+
 ### Quick Start
 
 ```
