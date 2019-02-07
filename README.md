@@ -6,7 +6,7 @@
 ### Quick Start
 
 ```
-docker pull scottgigante/magic
+docker pull scottgigante/magic:1.0
 docker run scottgigante/magic --help
 ```
 
