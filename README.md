@@ -23,7 +23,7 @@ docker run -v ${PWD}:/data --rm scottgigante/magic --filename https://github.com
 You can check that PHATE is installed and running correctly with our [test dataset](https://raw.githubusercontent.com/KrishnaswamyLab/magic-docker/master/magic-validate.csv) as follows:
 
 ```
-docker run scottgigante/magic --validate
+docker run --rm scottgigante/magic --validate
 ```
 
 which will compare the results with expected output stored in [magic-validate.csv](https://github.com/KrishnaswamyLab/magic-docker/blob/master/magic-validate.csv).
