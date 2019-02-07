@@ -213,8 +213,7 @@ def run_magic_from_file(
     if validate:
         correct_magic_data = scprep.io.load_csv(
             'https://raw.githubusercontent.com/KrishnaswamyLab/magic-docker/'
-            'master/magic-validate.csv?'
-            'token=AIGx30AtUqYRF075XivT1oz5U8_APDdJks5cZHfmwA%3D%3D', sparse=False)
+            'master/magic-validate.csv', sparse=False)
         try:
             np.testing.assert_equal(scprep.utils.toarray(magic_data),
                                     scprep.utils.toarray(correct_magic_data))
