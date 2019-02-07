@@ -12,8 +12,10 @@ docker run scottgigante/magic --help
 
 ### Usage Example
 
+Here we download a csv file containing raw scRNA-seq counts, preprocess it by filtering cells with less than 2000 counts, library size normalize and then apply a square root transform before running MAGIC, and save the result to `magic_output.csv`.
+
 ```
-docker run scottgigante/magic --filename https://github.com/KrishnaswamyLab/MAGIC/raw/master/data/HMLE_TGFb_day_8_10.csv.gz --gene-labels both --min-library-size 2000 --normalize --transform sqrt --knn 5 --decay 15 --output magic_output.csv
+docker run scottgigante/magic --filename https://github.com/KrishnaswamyLab/MAGIC/raw/master/data/HMLE_TGFb_day_8_10.csv.gz --min-library-size 2000 --normalize --transform sqrt --knn 5 --decay 15 --all-genes --output magic_output.csv
 ```
 
 ### Validation
