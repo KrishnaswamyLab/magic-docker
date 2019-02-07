@@ -231,36 +231,36 @@ def parse_args():
             args.gene_names = None
         else:
             parser.error(
-                "Cannot handle --gene-names with {} file".format(filetype[1:]))
+                "Cannot handle --gene-names with {} file".format(filetype))
         if '--cell-names' not in sys.argv:
             args.cell_names = None
         else:
             parser.error(
-                "Cannot handle --cell-names with {} file".format(filetype[1:]))
+                "Cannot handle --cell-names with {} file".format(filetype))
     if filetype not in ['csv', 'tsv', 'csv.gz', 'tsv.gz', 'mtx']:
         if '--cell-axis' not in sys.argv:
             args.cell_axis = None
         else:
             parser.error(
-                "Cannot handle --cell-axis with {} file".format(filetype[1:]))
+                "Cannot handle --cell-axis with {} file".format(filetype))
     if filetype not in ['dir', 'zip', 'hdf5', 'h5']:
         if '--gene-labels' not in sys.argv:
             args.gene_labels = None
         else:
             parser.error(
-                "Cannot handle --gene-labels with {} file".format(filetype[1:]))
+                "Cannot handle --gene-labels with {} file".format(filetype))
     if filetype not in ['hdf5', 'h5']:
         if '--genome' not in sys.argv:
             args.genome = None
         else:
             parser.error(
-                "Cannot handle --genome with {} file".format(filetype[1:]))
+                "Cannot handle --genome with {} file".format(filetype))
     if filetype not in ['fcs']:
         if '--metadata-channels' not in sys.argv:
             args.metadata_channels = None
         else:
             parser.error(
-                "Cannot handle --metadata-channels with {} file".format(filetype[1:]))
+                "Cannot handle --metadata-channels with {} file".format(filetype))
 
     # check for inappropriately set parameters
     if not args.transform == 'log':
